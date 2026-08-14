@@ -99,7 +99,7 @@ PAGE_TEMPLATE = """<!doctype html>
 </head>
 <body>
 <header class="site-header">
-  <a class="site-title" href="index.html">{student} &mdash; DREU Research Log</a>
+  <a class="site-title" href="index.html">{student} - DREU Log</a>
 </header>
 <main>
 {body}
@@ -136,7 +136,7 @@ def render_index(weeks, info):
 
     body = f"""
 <section class="hero">
-  <h1>{student}'s DREU Research Log</h1>
+  <h1>{student} - DREU Log</h1>
   {mentor_html}
   <p class="hero-sub">Weekly progress across the 10-week Distributed Research Experiences for Undergraduates program.</p>
 </section>
@@ -145,7 +145,7 @@ def render_index(weeks, info):
 </section>
 """
     html = PAGE_TEMPLATE.format(
-        title=f"{student} — DREU Research Log",
+        title=f"{student} - DREU Log",
         student=student,
         body=body,
     )
@@ -191,7 +191,7 @@ def render_week(week, info, prev_n, next_n, total):
 <nav class="week-nav">{''.join(nav_parts)}</nav>
 """
     html = PAGE_TEMPLATE.format(
-        title=f"Week {n} — {student}'s DREU Research Log",
+        title=f"Week {n} - {student} - DREU Log",
         student=student,
         body=body,
     )

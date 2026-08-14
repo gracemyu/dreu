@@ -16,7 +16,12 @@
 !logs/
 !logs/**
 
-# Allow the GitHub Actions workflow
+# Allow the GitHub Actions workflows
 !.github/
 !.github/workflows/
 !.github/workflows/validate-log.yml
+!.github/workflows/pages.yml
+
+# Allow the public site generator (build output in _site/ stays ignored)
+!site/
+!site/**

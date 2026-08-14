@@ -7,6 +7,29 @@ This repository contains your weekly research log for the Distributed Research E
 
 *Update the Student and Mentor fields above after forking.*
 
+## Public Progress Site
+
+Every push to `main` that touches `logs/` rebuilds a public site from your logs
+and deploys it to GitHub Pages at:
+
+```
+https://<your-username>.github.io/<repo-name>/
+```
+
+The first deploy needs GitHub Pages turned on once for this repo: **Settings →
+Pages → Source → GitHub Actions**. After that it updates itself — no manual
+rebuild step. The site only ever shows what's committed to `logs/`; weeks you
+haven't filled in yet are shown as "Not started."
+
+The generator lives in `site/` (`build_site.py` + `style.css`); the workflow
+is `.github/workflows/pages.yml`. To preview locally before pushing:
+
+```bash
+pip install markdown
+python site/build_site.py
+open _site/index.html
+```
+
 ## Repository Structure
 
 ```
@@ -14,6 +37,9 @@ your-repo/
 ├── README.md          ← this file
 ├── TEMPLATE.md        ← reference template (do not edit)
 ├── EXAMPLE.md         ← filled-out example showing expected quality
+├── site/               ← public progress site generator
+│   ├── build_site.py
+│   └── style.css
 └── logs/
     ├── week-01.md
     ├── week-02.md

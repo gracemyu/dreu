@@ -1,0 +1,182 @@
+:root {
+  --bg: #ffffff;
+  --fg: #1a1a1a;
+  --fg-muted: #5a5a5a;
+  --border: #e2e2e2;
+  --card-bg: #fafafa;
+  --accent: #2f5fd6;
+  --complete: #1a7f37;
+  --in-progress: #b4790a;
+  --not-started: #8a8a8a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14161a;
+    --fg: #eaeaea;
+    --fg-muted: #a0a0a0;
+    --border: #2c2f36;
+    --card-bg: #1b1e24;
+    --accent: #7fa2ff;
+    --complete: #4cc06a;
+    --in-progress: #e0a83a;
+    --not-started: #7a7a7a;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.6;
+}
+
+.site-header {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.site-title {
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--fg);
+}
+
+main {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+.hero h1 {
+  margin-bottom: 0.25rem;
+  font-size: 1.8rem;
+}
+
+.hero .mentor {
+  color: var(--fg-muted);
+  margin: 0.25rem 0;
+}
+
+.hero-sub {
+  color: var(--fg-muted);
+}
+
+.week-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.week-card {
+  display: block;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem;
+  background: var(--card-bg);
+  text-decoration: none;
+  color: var(--fg);
+  transition: border-color 0.15s ease;
+}
+
+.week-card:hover {
+  border-color: var(--accent);
+}
+
+.week-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.4rem;
+}
+
+.week-num {
+  font-weight: 600;
+}
+
+.status-badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  color: #fff;
+}
+
+.status-badge.status-complete { background: var(--complete); }
+.status-badge.status-in-progress { background: var(--in-progress); }
+.status-badge.status-not-started { background: var(--not-started); }
+
+.week-dates {
+  font-size: 0.85rem;
+  color: var(--fg-muted);
+  margin-bottom: 0.35rem;
+}
+
+.week-preview {
+  font-size: 0.9rem;
+  color: var(--fg-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.week-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+
+.nav-link.disabled {
+  color: var(--fg-muted);
+  pointer-events: none;
+}
+
+article h1 {
+  margin-bottom: 0.25rem;
+}
+
+.week-dates-full {
+  color: var(--fg-muted);
+  margin-top: 0;
+}
+
+.log-section h2 {
+  font-size: 1.1rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.3rem;
+  margin-top: 2rem;
+}
+
+.log-section ul {
+  padding-left: 1.2rem;
+}
+
+.empty-note {
+  color: var(--fg-muted);
+  font-style: italic;
+}
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--fg-muted);
+}
+
+.site-footer a {
+  color: var(--fg-muted);
+}
